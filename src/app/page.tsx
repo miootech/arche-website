@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArcheApp } from "@/components/arche/app";
 
 export const metadata: Metadata = {
-  title: "arche. — Websites aus Ludwigshafen | Webdesign ab 169 €",
+  title: "arche. — Websites auf Anfrage",
   description:
     "Individuelle Websites, Frontend Development und UI/UX für kleine Unternehmen, Selbstständige und eigene Ideen. Direkt mit Ali Malik in Ludwigshafen. Websites ab 169 €. Unverbindliches Erstgespräch.",
   alternates: { canonical: "https://arche.studio" },

@@ -11,7 +11,7 @@ const inter = Inter({
 
 const SITE_URL = "https://arche.studio";
 const SITE_NAME = "arche.";
-const SITE_TITLE = "arche. — Websites aus Ludwigshafen | Webdesign ab 169 €";
+const SITE_TITLE = "arche. — Websites auf Anfrage";
 const SITE_DESCRIPTION =
   "Individuelle Websites, Frontend Development und UI/UX für kleine Unternehmen, Selbstständige und eigene Ideen. Direkt mit Ali Malik in Ludwigshafen. Websites ab 169 €. Unverbindliches Erstgespräch.";
 
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "arche. — Websites aus Ludwigshafen | Webdesign ab 169 €",
+    title: "arche. — Websites auf Anfrage",
     description: SITE_DESCRIPTION,
     images: ["/arche-lockup.png"],
   },
