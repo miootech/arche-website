@@ -146,21 +146,21 @@ export const siteConfig = {
       id: "links",
       name: "arche. Links",
       summary: "Linktree Ersatz. Alle deine Links an einem Ort — sauber, schnell, kostenlos.",
-      url: "https://links.arche.studio", // ← hier echte URL eintragen
+      url: "https://arche-links.pages.dev/", // ← hier echte URL eintragen
       badge: "Linktree Ersatz",
     },
     {
       id: "remove-bg",
       name: "Background Remover",
       summary: "removal.ai Ersatz. Hintergrund in Sekunden entfernen — direkt im Browser.",
-      url: "https://bg.arche.studio", // ← hier echte URL eintragen
+      url: "https://arche-remove.pages.dev/", // ← hier echte URL eintragen
       badge: "removebg Ersatz",
     },
     {
       id: "pdf-tools",
       name: "PDF Tools",
       summary: "Adobe Acrobat Ersatz. PDFs zusammenführen, splitten, konvertieren — kostenlos.",
-      url: "https://pdf.arche.studio", // ← hier echte URL eintragen
+      url: "https://arche-website.pages.dev/", // ← hier echte URL eintragen
       badge: "Acrobat Ersatz",
     },
   ] as const,
