@@ -1,0 +1,75 @@
+rules_version = '2';
+
+// ============================================================
+// arche. — Firestore Security Rules (v3)
+// ------------------------------------------------------------
+// User-Account-Modell:
+//   - Jeder kann User-Account anlegen (via Firebase Auth)
+//   - Nur eingeloggte User können Reviews erstellen
+//   - User können nur ihre EIGENEN Reviews bearbeiten/löschen
+//   - User können ihre EIGENEN Reviews lesen (auch pending/rejected)
+//   - Öffentlich lesbar: nur approved=true & type=real Reviews
+//   - status, featured, type werden durch Rules erzwungen
+//   - Moderation: Site-Betreiber ändert status in Firestore Console
+// ============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Reviews Collection
+    match /reviews/{reviewId} {
+
+      // ✅ Lesen:
+      //   - Öffentlich: nur approved & real
+      //   - Eigentümer: eigene Reviews (egal welcher Status)
+      allow read: if (resource.data.status == 'approved' && resource.data.type == 'real')
+                   || (request.auth != null && resource.data.authorUid == request.auth.uid);
+
+      // ✅ Eingeloggter User: neues Review anlegen
+      // Status/Featured/Type werden ERZWUNGEN
+      allow create: if request.auth != null
+                     && request.resource.data.status == 'pending'
+                     && request.resource.data.featured == false
+                     && request.resource.data.type == 'real'
+                     && request.resource.data.authorUid == request.auth.uid
+                     && request.resource.data.rating is number
+                     && request.resource.data.rating >= 0.5
+                     && request.resource.data.rating <= 5.0
+                     && (request.resource.data.rating * 10) % 5 == 0
+                     && request.resource.data.name is string
+                     && request.resource.data.name.size() >= 2
+                     && request.resource.data.name.size() <= 60
+                     && request.resource.data.text is string
+                     && request.resource.data.text.size() >= 10
+                     && request.resource.data.text.size() <= 800
+                     && (!('project' in request.resource.data) ||
+                         request.resource.data.project is string
+                         && request.resource.data.project.size() <= 60);
+
+      // ✅ Eigentümer: eigenes Review bearbeiten
+      // - Nur eigene Reviews (authorUid == auth.uid)
+      // - status, featured, type dürfen NICHT geändert werden
+      // - authorUid darf nicht geändert werden
+      allow update: if request.auth != null
+                     && resource.data.authorUid == request.auth.uid
+                     && request.resource.data.authorUid == resource.data.authorUid
+                     && request.resource.data.type == resource.data.type
+                     && request.resource.data.featured == resource.data.featured
+                     && request.resource.data.status == 'pending'
+                     && request.resource.data.rating is number
+                     && request.resource.data.rating >= 0.5
+                     && request.resource.data.rating <= 5.0
+                     && request.resource.data.text.size() >= 10
+                     && request.resource.data.text.size() <= 800;
+
+      // ✅ Eigentümer: eigenes Review löschen
+      allow delete: if request.auth != null
+                     && resource.data.authorUid == request.auth.uid;
+    }
+
+    // Default: alles andere verweigern
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
