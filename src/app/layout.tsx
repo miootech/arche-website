@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   publisher: "arche.",
   applicationName: "arche.",
   category: "technology",
+  // Google Search Console Verifizierung hier sauber eingebunden:
+  verification: {
+    google: "GKF68M3dwQHT6O94KVs_RwY2jcvNjgKZRuVbXdylG54",
+  },
   alternates: {
     canonical: SITE_URL,
   },
@@ -317,4 +321,3 @@ export default function RootLayout({
     </html>
   );
 }
-
