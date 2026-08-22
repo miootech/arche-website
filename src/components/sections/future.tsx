@@ -30,7 +30,7 @@ export function FutureSection() {
             <Reveal delay={i * 0.04}>
               <div className="flex items-center justify-between gap-4 surface rounded-xl px-5 py-4 md:px-6 md:py-5 hover:bg-white/[0.03] transition-colors">
                 <div className="flex items-center gap-4 md:gap-6">
-                  <span className="text-micro text-muted-foreground/70 font-mono">
+                  <span className="text-micro text-muted-foreground font-mono">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-body-lg text-foreground font-medium">

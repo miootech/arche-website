@@ -493,7 +493,7 @@ function ReviewCard({
             </div>
           )}
         </div>
-        <div className="text-micro text-muted-foreground/70 shrink-0">
+        <div className="text-micro text-muted-foreground shrink-0">
           {dateStr}
         </div>
       </div>
@@ -687,13 +687,13 @@ function ReviewFormModal({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Dein Name"
-                  className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 h-11 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
+                  className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 h-11 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
                 />
               </div>
 
               <div>
                 <label htmlFor="rev-project" className="text-caption block mb-1.5">
-                  Projekt <span className="text-muted-foreground/60">(optional)</span>
+                  Projekt <span className="text-muted-foreground">(optional)</span>
                 </label>
                 <input
                   id="rev-project"
@@ -702,7 +702,7 @@ function ReviewFormModal({
                   value={project}
                   onChange={(e) => setProject(e.target.value)}
                   placeholder="z. B. Website"
-                  className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 h-11 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
+                  className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 h-11 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
                 />
               </div>
 
@@ -719,9 +719,9 @@ function ReviewFormModal({
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Wie war die Zusammenarbeit?"
                   rows={4}
-                  className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 py-3 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors resize-none"
+                  className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 py-3 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors resize-none"
                 />
-                <div className="text-micro text-right mt-1 text-muted-foreground/60">
+                <div className="text-micro text-right mt-1 text-muted-foreground">
                   {text.length} / 800
                 </div>
               </div>

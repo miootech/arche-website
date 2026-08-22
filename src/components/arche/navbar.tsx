@@ -162,7 +162,7 @@ export function Navbar({ onContactClick }: NavbarProps) {
                   <span className="text-3xl font-semibold tracking-tight text-foreground">
                     {item.label}
                   </span>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground/50 group-hover:text-foreground transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </motion.button>
               ))}
             </nav>

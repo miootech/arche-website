@@ -315,11 +315,11 @@ function ProjectModal({
                           <span className="text-body text-foreground group-hover:text-[oklch(0.72_0.20_295)] transition-colors truncate">
                             {p.name}
                           </span>
-                          <span className="text-micro text-muted-foreground/60 shrink-0">
+                          <span className="text-micro text-muted-foreground shrink-0">
                             {p.year}
                           </span>
                         </span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground/50 group-hover:text-[oklch(0.72_0.20_295)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0" />
+                        <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[oklch(0.72_0.20_295)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0" />
                       </a>
                     </motion.li>
                   ))}
@@ -351,17 +351,17 @@ function ProjectModal({
                       >
                         <span className="flex items-baseline gap-3 min-w-0">
                           <span
-                            className="inline-block w-1 h-1 rounded-full bg-muted-foreground/40 shrink-0 translate-y-[-2px]"
+                            className="inline-block w-1 h-1 rounded-full bg-muted-foreground/60 shrink-0 translate-y-[-2px]"
                             aria-hidden="true"
                           />
                           <span className="text-body text-foreground group-hover:text-[oklch(0.72_0.20_295)] transition-colors truncate">
                             {p.name}
                           </span>
-                          <span className="text-micro text-muted-foreground/60 shrink-0">
+                          <span className="text-micro text-muted-foreground shrink-0">
                             {p.year}
                           </span>
                         </span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground/50 group-hover:text-[oklch(0.72_0.20_295)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0" />
+                        <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[oklch(0.72_0.20_295)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0" />
                       </a>
                     </motion.li>
                   ))}
@@ -370,7 +370,7 @@ function ProjectModal({
             )}
 
             {/* Footer Hint */}
-            <p className="mt-6 pt-4 border-t border-white/[0.06] text-micro text-muted-foreground/60 text-center">
+            <p className="mt-6 pt-4 border-t border-white/[0.06] text-micro text-muted-foreground text-center">
               Externe Links öffnen in neuem Tab
             </p>
           </motion.div>

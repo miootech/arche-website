@@ -471,7 +471,7 @@ export default function DatenschutzPage() {
 
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-white/[0.06]">
-          <p className="text-micro text-muted-foreground/70">
+          <p className="text-micro text-muted-foreground">
             Stand: August 2026 · Diese Datenschutzerklärung stellt keine individuelle
             Rechtsberatung dar.
           </p>

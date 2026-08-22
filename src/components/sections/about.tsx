@@ -87,7 +87,7 @@ export function AboutSection() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <span className="text-micro text-muted-foreground/70 font-mono shrink-0 transition-colors group-hover:text-[oklch(0.72_0.20_295)] duration-500">
+                <span className="text-micro text-muted-foreground font-mono shrink-0 transition-colors group-hover:text-[oklch(0.72_0.20_295)] duration-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="text-title text-foreground/95 leading-snug">

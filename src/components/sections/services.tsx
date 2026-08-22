@@ -129,7 +129,7 @@ function ServiceCard({
         )}
 
         <div className="relative z-10">
-          <div className="text-micro text-muted-foreground/70">
+          <div className="text-micro text-muted-foreground">
             {String(index + 1).padStart(2, "0")}
           </div>
           <h3 className="text-title mt-2 text-foreground">{service.name}</h3>
@@ -144,10 +144,10 @@ function ServiceCard({
         </p>
 
         <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between relative z-10">
-          <span className="text-micro text-muted-foreground/70 group-hover:text-foreground/80 transition-colors">
+          <span className="text-micro text-muted-foreground group-hover:text-foreground transition-colors">
             Mehr erfahren
           </span>
-          <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/50 group-hover:text-foreground group-hover:translate-x-0.5 transition-all duration-300" />
+          <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all duration-300" />
         </div>
       </motion.button>
     </Reveal>

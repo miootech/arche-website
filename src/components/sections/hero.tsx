@@ -160,7 +160,7 @@ export function HeroSection({ onContactClick, onWorkClick }: HeroProps) {
           animate={{ y: [0, 4, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowDown className="w-3.5 h-3.5 text-muted-foreground/50" />
+          <ArrowDown className="w-3.5 h-3.5 text-muted-foreground" />
         </motion.div>
       </motion.div>
     </section>

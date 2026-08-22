@@ -257,7 +257,7 @@ export function ContactSection({ preselectInquiry }: ContactProps) {
                       maxLength={2000}
                       rows={5}
                       placeholder="Erzähl uns, was du vorhast …"
-                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 py-3 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors resize-none"
+                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 py-3 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors resize-none"
                     />
                   </div>
 
@@ -288,7 +288,7 @@ export function ContactSection({ preselectInquiry }: ContactProps) {
                     )}
                   </ArcheButton>
 
-                  <p className="text-micro text-muted-foreground/70">
+                  <p className="text-micro text-muted-foreground">
                     Deine Angaben werden nur zur Bearbeitung deiner Anfrage
                     verwendet.
                   </p>
@@ -327,7 +327,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         maxLength={100}
-        className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 h-11 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
+        className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-3 h-11 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
       />
     </div>
   );

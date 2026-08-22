@@ -122,15 +122,15 @@ export function Footer({ onContactClick }: FooterProps) {
 
         {/* Bottom */}
         <div className="mt-8 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p className="text-micro text-muted-foreground/70">
+          <p className="text-micro text-muted-foreground">
             © {new Date().getFullYear()} arche. — Independent Digital Studio.
           </p>
-          <div className="flex items-center gap-3 text-micro text-muted-foreground/70">
-            <a href="#" className="hover:text-foreground transition-colors">
+          <div className="flex items-center gap-3 text-micro text-muted-foreground">
+            <a href="/impressum" className="hover:text-foreground transition-colors">
               Impressum
             </a>
             <span aria-hidden="true">·</span>
-            <a href="#" className="hover:text-foreground transition-colors">
+            <a href="/datenschutz" className="hover:text-foreground transition-colors">
               Datenschutz
             </a>
           </div>

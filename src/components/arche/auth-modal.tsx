@@ -111,7 +111,7 @@ export function AuthModal({ open, onClose, onSuccess, reason }: AuthModalProps) 
                     Name
                   </label>
                   <div className="relative">
-                    <UserIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/60" />
+                    <UserIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <input
                       id="auth-name"
                       type="text"
@@ -121,7 +121,7 @@ export function AuthModal({ open, onClose, onSuccess, reason }: AuthModalProps) 
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Dein Name"
-                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-9 pr-3 h-11 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
+                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-9 pr-3 h-11 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
                     />
                   </div>
                 </div>
@@ -132,7 +132,7 @@ export function AuthModal({ open, onClose, onSuccess, reason }: AuthModalProps) 
                   E-Mail
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/60" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <input
                     id="auth-email"
                     type="email"
@@ -140,7 +140,7 @@ export function AuthModal({ open, onClose, onSuccess, reason }: AuthModalProps) 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="deine@email.de"
-                    className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-9 pr-3 h-11 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
+                    className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-9 pr-3 h-11 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
                   />
                 </div>
               </div>
@@ -150,7 +150,7 @@ export function AuthModal({ open, onClose, onSuccess, reason }: AuthModalProps) 
                   Passwort
                 </label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/60" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <input
                     id="auth-pw"
                     type="password"
@@ -159,7 +159,7 @@ export function AuthModal({ open, onClose, onSuccess, reason }: AuthModalProps) 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Mindestens 6 Zeichen"
-                    className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-9 pr-3 h-11 text-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
+                    className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-9 pr-3 h-11 text-body text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[oklch(0.62_0.24_295/0.5)] focus:bg-white/[0.05] transition-colors"
                   />
                 </div>
               </div>

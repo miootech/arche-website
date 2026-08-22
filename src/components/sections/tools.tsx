@@ -68,7 +68,7 @@ export function ToolsSection() {
                     <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:bg-[oklch(0.62_0.24_295/0.1)] group-hover:border-[oklch(0.62_0.24_295/0.25)] transition-colors duration-500">
                       <Icon className="w-5 h-5 text-foreground/80 group-hover:text-[oklch(0.72_0.20_295)] transition-colors duration-500" />
                     </div>
-                    <span className="text-micro text-muted-foreground/60 px-2 py-0.5 rounded-full border border-white/[0.06]">
+                    <span className="text-micro text-foreground/75 px-2.5 py-1 rounded-full border border-white/[0.1] bg-white/[0.03]">
                       {tool.badge}
                     </span>
                   </div>
@@ -83,10 +83,10 @@ export function ToolsSection() {
 
                   {/* CTA */}
                   <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                    <span className="text-micro text-muted-foreground/70 group-hover:text-foreground/80 transition-colors">
+                    <span className="text-micro text-muted-foreground group-hover:text-foreground transition-colors">
                       Kostenlos · Keine Anmeldung
                     </span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground/50 group-hover:text-[oklch(0.72_0.20_295)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[oklch(0.72_0.20_295)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </div>
                 </div>
               </motion.a>
@@ -97,7 +97,7 @@ export function ToolsSection() {
 
       {/* Footer Hinweis */}
       <Reveal delay={0.15} className="mt-8 md:mt-10">
-        <p className="text-micro text-muted-foreground/60 text-center max-w-md mx-auto">
+        <p className="text-micro text-muted-foreground text-center max-w-md mx-auto">
           Alle Tools laufen direkt im Browser. Keine Daten werden an Server
           gesendet, die du nicht kontrollierst.
         </p>

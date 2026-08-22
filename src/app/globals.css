@@ -101,7 +101,7 @@
   --secondary: oklch(0.11 0.005 285);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.10 0.005 285);
-  --muted-foreground: oklch(0.62 0.005 285);
+  --muted-foreground: oklch(0.70 0.005 285);
   --accent: oklch(0.62 0.24 295);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
@@ -193,14 +193,14 @@
     letter-spacing: -0.02em;
     font-weight: 600;
   }
-  /* Eyebrow — sehr dezent */
+  /* Eyebrow — dezent aber gut lesbar */
   .text-eyebrow {
     font-size: 0.6875rem;
     line-height: 1.2;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     font-weight: 500;
-    color: oklch(0.55 0.005 285);
+    color: oklch(0.68 0.008 290);
   }
   /* Body Large — für Einleitungstexte */
   .text-body-lg {
@@ -219,14 +219,14 @@
     font-size: 0.75rem;
     line-height: 1.5;
     letter-spacing: 0;
-    color: oklch(0.55 0.005 285);
+    color: oklch(0.68 0.005 285);
   }
   /* Micro — für sehr kleine Labels */
   .text-micro {
     font-size: 0.6875rem;
     line-height: 1.4;
     letter-spacing: 0.04em;
-    color: oklch(0.55 0.005 285);
+    color: oklch(0.66 0.005 285);
   }
 }
 
