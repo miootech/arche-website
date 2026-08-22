@@ -160,7 +160,7 @@ export const siteConfig = {
       id: "pdf-tools",
       name: "PDF Tools",
       summary: "Adobe Acrobat Ersatz. PDFs zusammenführen, splitten, konvertieren — kostenlos.",
-      url: "https://arche-website.pages.dev/", // ← hier echte URL eintragen
+      url: "https://arche-pdf.pages.dev/", // ← hier echte URL eintragen
       badge: "Acrobat Ersatz",
     },
   ] as const,
