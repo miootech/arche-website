@@ -38,10 +38,11 @@ const PAGE_SCHEMA = {
   serviceType: "Suchmaschinenoptimierung",
   description:
     "Ganzheitliche technische Suchmaschinenoptimierung, Core Web Vitals Tuning, Schema.org JSON-LD Implementierung und Google Search Console Optimierung.",
-  areaServed: siteConfig.business.serviceAreas.map((area) => ({
+  areaServed: (siteConfig.business.serviceAreas || []).map((area) => ({
     "@type": "AdministrativeArea",
     name: area,
   })),
+
 };
 
 export default function SeoPage() {

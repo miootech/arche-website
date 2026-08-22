@@ -38,10 +38,11 @@ const PAGE_SCHEMA = {
   serviceType: "UI/UX Design",
   description:
     "Nutzerzentriertes Interface-Design, Wireframing, Prototyping und vollständige Website-Redesigns für Unternehmen und digitale Produkte.",
-  areaServed: siteConfig.business.serviceAreas.map((area) => ({
+  areaServed: (siteConfig.business.serviceAreas || []).map((area) => ({
     "@type": "AdministrativeArea",
     name: area,
   })),
+
 };
 
 export default function UiUxDesignPage() {

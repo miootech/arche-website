@@ -38,10 +38,11 @@ const PAGE_SCHEMA = {
   serviceType: "Webentwicklung",
   description:
     "Maßgeschneiderte Frontend-Entwicklung, Web-App-Entwicklung und API-Integrationen mit React, Next.js, TypeScript und Tailwind CSS.",
-  areaServed: siteConfig.business.serviceAreas.map((area) => ({
+  areaServed: (siteConfig.business.serviceAreas || []).map((area) => ({
     "@type": "AdministrativeArea",
     name: area,
   })),
+
   offers: {
     "@type": "Offer",
     price: "269",
