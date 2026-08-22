@@ -16,12 +16,19 @@ export const metadata: Metadata = {
     siteName: "arche.",
     images: [
       {
-        url: "/arche-lockup.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "arche. — Independent Digital Studio aus Ludwigshafen",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "arche. — Websites aus Ludwigshafen, die nicht nach Baukasten aussehen.",
+    description:
+      "Webdesign, Frontend und UI/UX aus Ludwigshafen am Rhein. Direkt mit Ali Malik. Websites ab 169 €. Unverbindliches Erstgespräch.",
+    images: ["/og-image.png"],
   },
 };
 

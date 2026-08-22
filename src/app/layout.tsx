@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/arche-visual.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "arche. — Independent Digital Studio aus Ludwigshafen",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "arche. — Websites auf Anfrage",
     description: SITE_DESCRIPTION,
-    images: ["/arche-lockup.png"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [{ url: "/arche-visual.png", type: "image/png" }],
@@ -129,7 +129,7 @@ export default function RootLayout({
               description: SITE_DESCRIPTION,
               url: SITE_URL,
               logo: `${SITE_URL}/arche-lockup.png`,
-              image: `${SITE_URL}/arche-lockup.png`,
+              image: `${SITE_URL}/og-image.png`,
               founder: {
                 "@type": "Person",
                 name: "Ali Malik",
