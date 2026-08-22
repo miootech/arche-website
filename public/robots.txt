@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arche-website.pages.dev/sitemap.xml

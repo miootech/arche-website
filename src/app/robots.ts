@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site-config";
 
 export const dynamic = "force-static";
 
@@ -9,8 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: "https://arche-website.pages.dev/sitemap.xml",
+    host: "https://arche-website.pages.dev",
   };
 }
-
-

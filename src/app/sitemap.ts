@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: `${base}/`,
+      url: base,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
@@ -58,4 +58,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
-

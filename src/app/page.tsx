@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "arche. — Webdesign, Webentwicklung & Digitale Produkte | Ludwigshafen & Mannheim",
   description:
     "Moderne Websites, High-End Webentwicklung (React, Next.js), UI/UX Design und technisches SEO aus Ludwigshafen am Rhein und Mannheim. Für Unternehmen & Selbstständige. Websites ab 169 €.",
-  alternates: { canonical: `${siteConfig.url}/` },
+  alternates: { canonical: siteConfig.url },
+
   openGraph: {
     title: "arche. — Webdesign & moderne Webentwicklung | Ludwigshafen & Mannheim",
     description:
@@ -36,4 +37,3 @@ export const metadata: Metadata = {
 export default function Home() {
   return <ArcheApp />;
 }
-
