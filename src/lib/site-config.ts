@@ -133,9 +133,9 @@ export const siteConfig = {
       { name: "Noch keine aktiven Kunden Projekte"},
     ],
     studio: [
-      { name: "arche. studio", url: "https://arche.studio", year: "2026" },
-      { name: "arche. links", url: "https://arche.studio", year: "2026" },
-      { name: "arche. remove", url: "https://arche.studio", year: "2026" },
+      { name: "arche. links", url: "https://arche-links.pages.dev", year: "2026" },
+      { name: "arche. remove", url: "https://arche-remove.pages.dev", year: "2026" },
+      { name: "arche. pdf", url: "https://arche-pdf.pages.dev", year: "2026" },
     ],
   } as const,
 
