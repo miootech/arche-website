@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Mail, MapPin, Shield } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
     "Datenschutzerklärung von arche. — Informationen zur Verarbeitung personenbezogener Daten durch Ali Malik, Ludwigshafen.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://arche.studio/datenschutz" },
+  alternates: { canonical: `${siteConfig.url}/datenschutz` },
 };
+
 
 export default function DatenschutzPage() {
   return (

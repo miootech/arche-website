@@ -3,24 +3,29 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "./logo";
 import { ArcheButton } from "./button";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
-  onContactClick: () => void;
+  onContactClick?: () => void;
 }
 
 const NAV_LINKS = [
-  { label: "Work", target: "work" },
-  { label: "Services", target: "services" },
-  { label: "Reviews", target: "reviews" },
-  { label: "FAQ", target: "faq" },
+  { label: "Services", target: "services", href: "/#services" },
+  { label: "Work", target: "work", href: "/#work" },
+  { label: "Tools", target: "tools", href: "/#tools" },
+  { label: "Reviews", target: "reviews", href: "/#reviews" },
+  { label: "FAQ", target: "faq", href: "/#faq" },
 ] as const;
 
 export function Navbar({ onContactClick }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -41,17 +46,32 @@ export function Navbar({ onContactClick }: NavbarProps) {
     };
   }, [mobileOpen]);
 
-  const scrollTo = (id: string) => {
+  const handleNavClick = (target: string, href: string) => {
     setMobileOpen(false);
-    setTimeout(() => {
-      const el = document.getElementById(`section-${id}`);
+    if (isHome) {
+      setTimeout(() => {
+        const el = document.getElementById(`section-${target}`);
+        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    } else {
+      window.location.href = href;
+    }
+  };
+
+  const handleContact = () => {
+    setMobileOpen(false);
+    if (onContactClick) {
+      onContactClick();
+    } else if (isHome) {
+      const el = document.getElementById("section-contact");
       el?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 180);
+    } else {
+      window.location.href = "/#contact";
+    }
   };
 
   return (
     <>
-      {/* Solid Background Header — kein Overlay */}
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -62,20 +82,27 @@ export function Navbar({ onContactClick }: NavbarProps) {
       >
         <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
           <div className="flex items-center justify-between h-14 md:h-16">
-            <Logo
+            <Link
+              href="/"
               onClick={() => {
                 setMobileOpen(false);
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                if (isHome) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
               }}
-            />
+              className="inline-flex items-center"
+              aria-label="arche. Startseite"
+            >
+              <Logo />
+            </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden md:flex items-center gap-1" aria-label="Hauptnavigation">
               {NAV_LINKS.map((item) => (
                 <button
                   key={item.target}
-                  onClick={() => scrollTo(item.target)}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  onClick={() => handleNavClick(item.target, item.href)}
+                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-pointer"
                 >
                   {item.label}
                 </button>
@@ -87,18 +114,18 @@ export function Navbar({ onContactClick }: NavbarProps) {
               <ArcheButton
                 variant="purple"
                 size="sm"
-                onClick={onContactClick}
-                className="!h-9 !px-4"
+                onClick={handleContact}
+                className="!h-9 !px-4 cursor-pointer"
               >
-                <span className="hidden sm:inline">Projekt starten</span>
-                <span className="sm:hidden">Start</span>
+                <span className="hidden sm:inline">Projekt anfragen</span>
+                <span className="sm:hidden">Anfragen</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </ArcheButton>
 
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setMobileOpen((v) => !v)}
-                className="md:hidden p-2 -mr-1 text-foreground"
+                className="md:hidden p-2 -mr-1 text-foreground cursor-pointer"
                 aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
                 aria-expanded={mobileOpen}
               >
@@ -131,10 +158,10 @@ export function Navbar({ onContactClick }: NavbarProps) {
         </div>
       </header>
 
-      {/* Spacer — verhindert, dass Content unter der festen Navbar verschwindet */}
+      {/* Spacer */}
       <div className="h-14 md:h-16" aria-hidden="true" />
 
-      {/* Mobile Fullscreen Menu — Apple-style */}
+      {/* Mobile Fullscreen Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -145,12 +172,12 @@ export function Navbar({ onContactClick }: NavbarProps) {
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Nav Items */}
-            <nav className="flex-1 flex flex-col justify-center px-6 gap-1">
+            <nav className="flex-1 flex flex-col justify-center px-6 gap-1" aria-label="Mobile Navigation">
               {NAV_LINKS.map((item, i) => (
                 <motion.button
                   key={item.target}
-                  onClick={() => scrollTo(item.target)}
-                  className="group flex items-center justify-between py-4 border-b border-white/[0.05]"
+                  onClick={() => handleNavClick(item.target, item.href)}
+                  className="group flex items-center justify-between py-4 border-b border-white/[0.05] text-left cursor-pointer"
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -159,7 +186,7 @@ export function Navbar({ onContactClick }: NavbarProps) {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
-                  <span className="text-3xl font-semibold tracking-tight text-foreground">
+                  <span className="text-2xl font-semibold tracking-tight text-foreground">
                     {item.label}
                   </span>
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -177,17 +204,14 @@ export function Navbar({ onContactClick }: NavbarProps) {
               <ArcheButton
                 variant="purple"
                 size="lg"
-                onClick={() => {
-                  setMobileOpen(false);
-                  setTimeout(onContactClick, 180);
-                }}
+                onClick={handleContact}
                 className="w-full"
               >
                 <span>Kostenlos sprechen</span>
                 <ArrowRight className="w-4 h-4" />
               </ArcheButton>
               <p className="text-center text-micro text-muted-foreground mt-5">
-                Unverbindlich · Kein Verkaufsdruck
+                Unverbindlich · Kein Verkaufsdruck · Rhein-Neckar & Remote
               </p>
             </motion.div>
           </motion.div>
@@ -201,3 +225,4 @@ export function scrollToSection(id: string) {
   const el = document.getElementById(`section-${id}`);
   el?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+

@@ -2,26 +2,41 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "arche.",
-  "description": "Moderne Websites und digitale Experiences für Menschen und Unternehmen. Frontend Development, UI/UX Design und digitale Gestaltung.",
-  "url": "https://arche.studio",
-  "image": "https://arche.studio/og-image.png",
-  "areaServed": "DE",
+  "alternateName": "arche Digital Studio",
+  "description": "Moderne Websites, High-End Webentwicklung (React, Next.js), UI/UX Design und technisches SEO aus Ludwigshafen, Mannheim und der Rhein-Neckar Region.",
+  "url": "https://arche-website.pages.dev",
+  "logo": "https://arche-website.pages.dev/arche-lockup.png",
+  "image": "https://arche-website.pages.dev/og-image.png",
+  "areaServed": [
+    "Ludwigshafen am Rhein",
+    "Mannheim",
+    "Metropolregion Rhein-Neckar",
+    "Deutschland",
+    "DACH"
+  ],
   "knowsLanguage": ["de", "en"],
   "serviceType": [
+    "Webdesign",
+    "Webentwicklung",
     "Frontend Development",
-    "Website Design",
     "UI/UX Design",
-    "Landingpage",
-    "Media Design"
+    "Suchmaschinenoptimierung (SEO)",
+    "Digitale Produkte"
   ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ludwigshafen am Rhein",
+    "postalCode": "67065",
+    "addressCountry": "DE"
+  },
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "EUR",
     "lowPrice": "169",
-    "highPrice": "269",
-    "offerCount": "2"
+    "highPrice": "269"
   },
   "sameAs": [
     "https://instagram.com/malikali065"
   ]
 }
+

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Mail, MapPin, User } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Impressum",
   description:
     "Impressum und Anbieterkennzeichnung von arche. — Ali Malik, Ludwigshafen am Rhein.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://arche.studio/impressum" },
+  alternates: { canonical: `${siteConfig.url}/impressum` },
 };
+
 
 export default function ImpressumPage() {
   return (

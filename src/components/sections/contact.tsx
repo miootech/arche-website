@@ -132,22 +132,24 @@ export function ContactSection({ preselectInquiry }: ContactProps) {
             "@type": "ContactPage",
             name: "Kontakt — arche.",
             description:
-              "Kostenloses Erstgespräch für moderne Websites und digitale Experiences.",
+              "Kostenloses Erstgespräch für moderne Websites, Webentwicklung und digitale Experiences.",
+            url: `${siteConfig.url}/#contact`,
             mainEntity: {
-              "@type": "Organization",
+              "@type": "ProfessionalService",
               name: "arche.",
-              email: "hello@arche.studio",
-              url: "https://arche.studio",
+              email: siteConfig.email,
+              url: siteConfig.url,
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer service",
-                email: "hello@arche.studio",
+                email: siteConfig.email,
                 availableLanguage: ["German", "English"],
               },
             },
           }),
         }}
       />
+
 
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         {/* Left */}

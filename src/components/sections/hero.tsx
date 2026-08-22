@@ -65,10 +65,13 @@ export function HeroSection({ onContactClick, onWorkClick }: HeroProps) {
         >
           <img
             src="/arche-lockup.png"
-            alt="arche. — Independent Digital Studio"
+            alt="arche. — Digital Studio für Webdesign, Webentwicklung & Digitale Produkte"
             className="h-12 md:h-16 w-auto opacity-90"
             width={280}
             height={64}
+            decoding="async"
+            // @ts-ignore
+            fetchpriority="high"
           />
         </motion.div>
 
@@ -80,7 +83,7 @@ export function HeroSection({ onContactClick, onWorkClick }: HeroProps) {
           className="flex items-center gap-3 mb-6"
         >
           <span className="inline-block w-6 h-px bg-foreground/20" aria-hidden="true" />
-          <span className="text-eyebrow">Independent Digital Studio</span>
+          <span className="text-eyebrow">Webdesign · Webentwicklung · Rhein-Neckar & Remote</span>
         </motion.div>
 
         {/* H1 — Hauptheadline */}
@@ -112,12 +115,13 @@ export function HeroSection({ onContactClick, onWorkClick }: HeroProps) {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE, delay: 0.4 }}
-          className="text-body-lg text-muted-foreground max-w-xl mt-6 font-normal"
+          className="text-body-lg text-muted-foreground max-w-2xl mt-6 font-normal leading-relaxed"
         >
-          Websites und digitale Experiences für Menschen, die keinen
-          08/15-Auftritt wollen. Konzept, Design und Frontend — direkt mit mir.
-          Ab 169 €.
+          Moderne Websites, maßgeschneiderte Webentwicklung (React & Next.js),
+          UI/UX Design und technisches SEO. Für Selbstständige und Unternehmen aus
+          Ludwigshafen, Mannheim & deutschlandweit. Direkt mit Ali Malik — Websites ab 169 €.
         </motion.h2>
+
 
         {/* CTAs */}
         <motion.div

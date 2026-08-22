@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Section } from "../arche/section";
 import { Reveal } from "../arche/reveal";
 import { ArcheButton } from "../arche/button";
@@ -13,41 +14,11 @@ interface ServicesProps {
 }
 
 export function ServicesSection({ onContactClick }: ServicesProps) {
-  // JSON-LD für Service-Angebote
-  const servicesJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    itemListElement: siteConfig.services.map((s, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      item: {
-        "@type": "Service",
-        name: s.name,
-        description: s.summary,
-        provider: {
-          "@type": "ProfessionalService",
-          name: "arche.",
-        },
-        offers: {
-          "@type": "Offer",
-          priceCurrency: "EUR",
-          price: s.priceLabel.replace(/[^0-9]/g, "") || "0",
-          availability: "https://schema.org/InStock",
-        },
-      },
-    })),
-  };
-
   return (
     <Section id="section-services" ariaLabel="Leistungen und Preise">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
-      />
-
       {/* Header */}
       <Reveal className="max-w-3xl mb-12 md:mb-16">
-        <span className="text-eyebrow">Services · Pricing</span>
+        <span className="text-eyebrow">Services · Webdesign & Entwicklung</span>
         <h2 className="text-headline mt-4">Einfach anfangen. Später wachsen.</h2>
         <p className="text-body-lg text-muted-foreground mt-4">
           Kein riesiges Paket nötig, wenn du erstmal eine gute Website brauchst.
@@ -79,10 +50,18 @@ export function ServicesSection({ onContactClick }: ServicesProps) {
               du wirklich brauchst — und was du dir sparen kannst.
             </p>
           </div>
-          <ArcheButton variant="purple" size="md" onClick={() => onContactClick()}>
-            <span>Kurz besprechen</span>
-            <ArrowRight className="w-4 h-4" />
-          </ArcheButton>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/webdesign"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-lg border border-white/[0.06] hover:bg-white/[0.04]"
+            >
+              Alle Leistungen ansehen
+            </Link>
+            <ArcheButton variant="purple" size="md" onClick={() => onContactClick()}>
+              <span>Kurz besprechen</span>
+              <ArrowRight className="w-4 h-4" />
+            </ArcheButton>
+          </div>
         </div>
       </Reveal>
     </Section>
@@ -101,16 +80,14 @@ function ServiceCard({
   const isHighlight = service.highlight;
   return (
     <Reveal delay={index * 0.05}>
-      <motion.button
+      <motion.div
         className={cn(
-          "group w-full text-left rounded-2xl p-5 md:p-6 flex flex-col gap-4 transition-all duration-300 cursor-pointer relative overflow-hidden card-hover-lift",
+          "group w-full text-left rounded-2xl p-5 md:p-6 flex flex-col justify-between gap-4 transition-all duration-300 relative overflow-hidden card-hover-lift h-full",
           isHighlight
             ? "bg-[oklch(0.10_0.02_295)] border border-[oklch(0.62_0.24_295/0.3)] hover:border-[oklch(0.62_0.24_295/0.5)]"
             : "surface hover:bg-white/[0.03] hover:border-white/[0.12]",
         )}
-        onClick={onSelect}
         whileHover={{ y: -3 }}
-        whileTap={{ scale: 0.99 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       >
         <div
@@ -122,34 +99,46 @@ function ServiceCard({
           }}
         />
 
-        {isHighlight && (
-          <div className="self-start px-2 py-0.5 rounded-full bg-[oklch(0.62_0.24_295)] text-white text-[0.6875rem] font-medium tracking-wide relative z-10">
-            Beliebt
+        <div>
+          {isHighlight && (
+            <div className="self-start inline-block mb-3 px-2 py-0.5 rounded-full bg-[oklch(0.62_0.24_295)] text-white text-[0.6875rem] font-medium tracking-wide relative z-10">
+              Beliebt
+            </div>
+          )}
+
+          <div className="relative z-10">
+            <div className="text-micro text-muted-foreground font-mono">
+              {String(index + 1).padStart(2, "0")}
+            </div>
+            <h3 className="text-title mt-2 text-foreground">{service.name}</h3>
           </div>
-        )}
 
-        <div className="relative z-10">
-          <div className="text-micro text-muted-foreground">
-            {String(index + 1).padStart(2, "0")}
+          <div className="text-xl font-semibold tracking-tight text-foreground relative z-10 mt-3">
+            {service.priceLabel}
           </div>
-          <h3 className="text-title mt-2 text-foreground">{service.name}</h3>
+
+          <p className="text-body text-muted-foreground leading-relaxed relative z-10 mt-3">
+            {service.summary}
+          </p>
         </div>
 
-        <div className="text-xl font-semibold tracking-tight text-foreground relative z-10">
-          {service.priceLabel}
+        <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between relative z-10">
+          <Link
+            href={service.slug}
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+          >
+            <span>Details</span>
+            <ArrowRight className="w-3 h-3" />
+          </Link>
+          <button
+            onClick={onSelect}
+            className="text-xs text-[oklch(0.72_0.20_295)] hover:text-foreground font-medium transition-colors cursor-pointer"
+          >
+            Anfragen →
+          </button>
         </div>
-
-        <p className="text-body text-muted-foreground leading-relaxed relative z-10">
-          {service.summary}
-        </p>
-
-        <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between relative z-10">
-          <span className="text-micro text-muted-foreground group-hover:text-foreground transition-colors">
-            Mehr erfahren
-          </span>
-          <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all duration-300" />
-        </div>
-      </motion.button>
+      </motion.div>
     </Reveal>
   );
 }
+

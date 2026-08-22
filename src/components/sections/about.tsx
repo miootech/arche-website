@@ -25,20 +25,21 @@ export function AboutSection() {
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
         <Reveal className="lg:col-span-7" delay={0.05}>
           <p className="text-body-lg text-foreground/90 leading-relaxed">
-            arche. ist ein unabhängiges digitales Studio, das ich Schritt für
-            Schritt aufbaue. Mein Anspruch ist simpel: gute digitale Arbeit,
-            ohne das typische Agentur-Theater dazwischen.
+            arche. ist ein unabhängiges digitales Studio mit Sitz in der
+            Metropolregion Rhein-Neckar (Ludwigshafen am Rhein & Mannheim). Mein
+            Anspruch ist simpel: erstklassiges Webdesign und maßgeschneiderte
+            Frontend-Entwicklung ohne das typische Agentur-Theater dazwischen.
           </p>
           <p className="text-body-lg text-muted-foreground leading-relaxed mt-5">
-            Du bekommst keinen Account Manager und keine fünf Ansprechpartner.
-            Du arbeitest direkt mit mir — von der ersten Idee bis zum fertigen
-            Produkt.
+            Du bekommst keinen Account Manager und keine wechselnden Ansprechpartner.
+            Du arbeitest direkt mit mir — von der ersten Konzeptidee über das UI/UX Design
+            und die Programmierung mit React/Next.js bis zum erfolgreichen Livegang.
           </p>
           <p className="text-body-lg text-muted-foreground leading-relaxed mt-5">
-            Dabei soll professionelle digitale Gestaltung nicht nur großen
-            Unternehmen vorbehalten sein. Auch ein kleines Business, ein
-            persönliches Projekt oder eine gute Idee verdient einen Auftritt,
-            auf den man stolz sein kann.
+            Ob lokales Unternehmen in Ludwigshafen oder Mannheim, Selbstständiger
+            oder Remote-Kunde in ganz Deutschland, Österreich und der Schweiz: Jedes
+            Projekt verdient einen digitalen Auftritt, der schnell lädt, bei Google
+            gefunden wird und Besucher begeistert.
           </p>
         </Reveal>
 
@@ -52,21 +53,23 @@ export function AboutSection() {
               }}
             />
             <div className="relative z-10">
-              <div className="text-eyebrow">Founder</div>
+              <div className="text-eyebrow">Founder & Developer</div>
               <div className="text-title mt-3 text-foreground">
                 {siteConfig.founder.name}
               </div>
               <div className="text-body text-muted-foreground mt-1">
-                {siteConfig.founder.role}
+                {siteConfig.founder.role} · {siteConfig.business.city}
               </div>
             </div>
             <div className="pt-5 border-t border-white/[0.06] space-y-3 relative z-10">
-              <ValueRow label="Direkter Ansprechpartner" />
-              <ValueRow label="Saubere Umsetzung" />
-              <ValueRow label="Klare Kommunikation" />
+              <ValueRow label="Direkter Ansprechpartner (1:1)" />
+              <ValueRow label="Moderne React & Next.js Entwicklung" />
+              <ValueRow label="Technisches SEO & Pagespeed inklusive" />
+              <ValueRow label="Rhein-Neckar & Remote DACH" />
             </div>
           </div>
         </Reveal>
+
       </div>
 
       {/* Philosophie */}

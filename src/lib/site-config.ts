@@ -1,14 +1,15 @@
 /**
- * arche. — zentrale Inhalts-Konfiguration (v10 · Apex + Tools)
+ * arche. — zentrale Inhalts-Konfiguration
+ * Production Domain: https://arche-website.pages.dev
  */
 
 export const siteConfig = {
   brand: "arche.",
   brandPlain: "arche",
-  tagline: "Websites, die nicht nach Baukasten aussehen.",
+  tagline: "Moderne Websites, Webdesign & Webentwicklung.",
   description:
-    "Individuelle Websites, Frontend Development und UI/UX für kleine Unternehmen, Selbstständige und eigene Ideen. Direkt mit Ali. Websites ab 169 €.",
-  url: "https://arche.studio",
+    "Digitalagentur aus der Rhein-Neckar-Region mit Kundenbetreuung vor Ort und remote deutschlandweit. Modernes Webdesign, performante Webentwicklung (React, Next.js), UI/UX Design und technisches SEO. Websites ab 169 €.",
+  url: "https://arche-website.pages.dev",
   locale: "de_DE",
   email: "alimalik67065@gmail.com",
   instagram: "malikali065",
@@ -17,13 +18,22 @@ export const siteConfig = {
 
   business: {
     ownerName: "Ali Malik",
+    region: "Metropolregion Rhein-Neckar",
     city: "Ludwigshafen am Rhein",
+    neighborCity: "Mannheim",
     zip: "67065",
     country: "Deutschland",
+    serviceAreas: [
+      "Ludwigshafen am Rhein",
+      "Mannheim",
+      "Metropolregion Rhein-Neckar",
+      "Deutschland (Remote)",
+      "Österreich & Schweiz (DACH)",
+    ],
   },
 
   founder: {
-    name: "Ali",
+    name: "Ali Malik",
     role: "Founder · Design & Development",
   },
 
@@ -37,100 +47,111 @@ export const siteConfig = {
 
   services: [
     {
-      id: "single-page",
-      name: "Single Page",
+      id: "webdesign",
+      name: "Webdesign & UI/UX",
+      slug: "/webdesign",
       priceLabel: "ab 169 €",
       summary:
-        "Ein fokussierter Auftritt auf einer Seite. Ideal für Personen, kleine Businesses, Services oder eine einzelne Idee.",
+        "Individuelles Webdesign ohne Baukasten-Templates. Maßgeschneiderte Benutzeroberflächen, die Vertrauen aufbauen und Besucher in Kunden verwandeln.",
       highlight: false,
-      inquiry: "single-page",
+      inquiry: "webdesign",
     },
     {
-      id: "multipage",
-      name: "Multipage",
+      id: "webentwicklung",
+      name: "Moderne Webentwicklung",
+      slug: "/webentwicklung",
       priceLabel: "ab 269 €",
       summary:
-        "Mehr Raum für dein Angebot. Bis zu zwei Seiten als Basis, später problemlos erweiterbar.",
+        "Blitzschnelle Websites und Web Apps mit modernstem Tech-Stack (React, Next.js, TypeScript, Tailwind CSS). Höchste Performance und saubere Code-Qualität.",
       highlight: true,
-      inquiry: "multipage",
-    },
-    {
-      id: "additional-page",
-      name: "Additional Page",
-      priceLabel: "+49 €",
-      summary: "Eine weitere Seite auf Basis deines bestehenden Projekts (Vorraussetzung: Multipage Paket).",
-      highlight: false,
-      inquiry: "additional-page",
-    },
-    {
-      id: "deployment",
-      name: "Deployment",
-      priceLabel: "ab 25 €",
-      summary:
-        "Hilfe beim technischen Setup und beim Livegang. Deine Domain bleibt deine.",
-      highlight: false,
-      inquiry: "deployment",
+      inquiry: "webentwicklung",
     },
     {
       id: "ui-ux",
-      name: "UI / UX",
+      name: "UI / UX Design & Redesign",
+      slug: "/ui-ux-design",
       priceLabel: "auf Anfrage",
       summary:
-        "Interfaces, User Flows und Design-Systeme für Projekte, die über eine klassische Website hinausgehen.",
+        "Intuitive User Experiences, Conversion-optimierte Layouts und vollständige Website-Redesigns für bestehende Marken und digitale Produkte.",
       highlight: false,
       inquiry: "ui-ux",
     },
     {
-      id: "media-design",
-      name: "Media Design",
-      priceLabel: "auf Anfrage",
+      id: "seo",
+      name: "SEO & Core Web Vitals",
+      slug: "/seo",
+      priceLabel: "Inklusive & auf Anfrage",
       summary:
-        "Digitale Gestaltung für Dinge, die nicht in eine Website passen — von Konzepten bis zu visuellen Assets.",
+        "Technisches SEO, semantisches HTML, strukturierte Schema.org-Daten und maximale Ladezeiten-Optimierung für beste Google-Rankings.",
       highlight: false,
-      inquiry: "media-design",
+      inquiry: "seo",
+    },
+    {
+      id: "digitale-produkte",
+      name: "Digitale Produkte & Tools",
+      slug: "/digitale-produkte",
+      priceLabel: "Kostenlos & Projektbasiert",
+      summary:
+        "Entwicklung eigener Web Apps und digitaler Werkzeuge wie arche.links, arche.remove und arche.pdf sowie individuelle SaaS-Lösungen.",
+      highlight: false,
+      inquiry: "digitale-produkte",
+    },
+    {
+      id: "single-page",
+      name: "Single Page Website",
+      slug: "/webdesign",
+      priceLabel: "ab 169 €",
+      summary:
+        "Ein fokussierter, eleganter One-Pager. Ideal für Dienstleister, Selbstständige, Portfolios oder eine konkrete Produkt-Idee.",
+      highlight: false,
+      inquiry: "single-page",
     },
   ] as const,
 
   faq: [
     {
-      q: "Was kostet eine Website?",
-      a: "Eine Single Page startet bei 169 €. Eine Multipage-Website startet bei 269 € für bis zu zwei Seiten. Weitere Seiten gibt es ab 49 €. Wenn dein Projekt besondere Anforderungen hat, besprechen wir den Umfang vorher transparent.",
+      q: "Was kostet eine professionelle Website bei arche?",
+      a: "Eine maßgeschneiderte Single-Page-Website startet bereits ab 169 €. Eine Multipage-Website (Basis bis zu zwei Seiten) beginnt bei 269 €, jede weitere Unterseite ab 49 €. Größere Web Apps oder individuelle UI/UX-Konzepte kalkulieren wir transparent nach Projektumfang im kostenlosen Erstgespräch.",
     },
     {
-      q: "Kann ich erstmal nur meine Idee besprechen?",
-      a: "Ja — genau dafür ist das Erstgespräch da. Du musst vorher weder ein fertiges Konzept noch eine genaue Liste an Anforderungen haben. Wir schauen gemeinsam, was daraus werden kann.",
+      q: "Wie läuft ein Webdesign- und Entwicklungsprojekt ab?",
+      a: "Der Prozess gliedert sich in 4 klare Phasen: 1. Kostenloses Kennenlernen & Bedarfsanalyse → 2. Konzept & Wireframing → 3. Design, Frontend-Entwicklung (Next.js/React) & SEO-Feinschliff → 4. Testing, Review & gemeinsamer Livegang inkl. Domain- & Hosting-Unterstützung.",
     },
     {
-      q: "Brauche ich schon eine Domain?",
-      a: "Nein, nicht für das Gespräch oder die Entwicklung. Für den späteren Livegang brauchst du eine Domain. Wenn du dabei Hilfe möchtest, unterstütze ich dich beim Setup — die Domain bleibt in deinem Besitz.",
+      q: "Sind die Websites für Google optimiert (SEO)?",
+      a: "Ja, standardmäßig. Jede von arche entwickelte Website verfügt über semantisch einwandfreies HTML5, blitzschnelle Ladezeiten (optimiert für Google Core Web Vitals wie LCP, CLS, INP), saubere Meta-Tags, Open Graph / Social Sharing, gültige XML-Sitemaps und validierte Schema.org Structured Data.",
     },
     {
-      q: "Wie läuft ein Projekt ab?",
-      a: "Erstgespräch → Konzept → Umsetzung → Review → Finalisierung → Launch. Du bekommst zwischendurch Einblick und kannst Feedback geben. Beim Deployment kann ich auf Wunsch ebenfalls unterstützen.",
+      q: "Arbeitet arche nur in Ludwigshafen und Mannheim oder auch überregional?",
+      a: "arche hat seine Wurzeln in der Rhein-Neckar-Region (Ludwigshafen am Rhein und Mannheim). Wir arbeiten sowohl eng mit regionalen Unternehmen und Gründern zusammen als auch komplett remote mit Kunden in ganz Deutschland, Österreich und der Schweiz.",
     },
     {
-      q: "Muss ich nach dem Erstgespräch etwas kaufen?",
-      a: "Nein. Das Gespräch ist kostenlos und unverbindlich. Wenn wir merken, dass es nicht passt, ist das genauso okay.",
+      q: "Welche Technologien setzt arche für die Webentwicklung ein?",
+      a: "Wir setzen auf modernen, zukunftssicheren State-of-the-Art-Code: React, Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion und statische Hochgeschwindigkeits-Deployments über Cloudflare Pages. Keine trägen Baukästen oder überladene Plugins.",
+    },
+    {
+      q: "Brauche ich bereits ein fertiges Konzept oder eine Domain?",
+      a: "Nein. Das unverbindliche Erstgespräch dient genau dazu, deine Idee zu strukturieren. Eine Domain wird erst beim Launch benötigt — bei der Auswahl, Registrierung und Konfiguration helfen wir dir gerne.",
     },
   ] as const,
 
   future: [
-    { title: "Advanced UI/UX", status: "Planned" },
-    { title: "Web Apps", status: "Exploring" },
-    { title: "Weitere Design Services", status: "Planned" },
-    { title: "Größere digitale Lösungen", status: "Future" },
+    { title: "Advanced Web Applications", status: "Exploring" },
+    { title: "SaaS Tools & Microservices", status: "Planned" },
+    { title: "Design Systems & Component Kits", status: "Planned" },
+    { title: "Automatisierte SEO-Workflows", status: "Future" },
   ] as const,
 
   philosophy: [
-    "Design soll etwas bewirken — nicht nur gut aussehen.",
-    "Einfach wirkt oft schwerer als kompliziert.",
-    "Gute Websites sollten nicht vom Budget abhängen.",
-    "Technologie ist Mittel zum Zweck, nicht der Selbstzweck.",
+    "Design soll Vertrauen schaffen und messbare Ergebnisse liefern.",
+    "Sauberer Code und schnelle Ladezeiten sind kein Bonus, sondern Standard.",
+    "Transparente Preise und direkter Kontakt ohne Agentur-Wasserkopf.",
+    "Technologie als Hebel für den geschäftlichen Erfolg unserer Kunden.",
   ] as const,
 
   projects: {
     client: [
-      { name: "Noch keine aktiven Kunden Projekte"},
+      { name: "Apex Dienstleister GmbH", url: "https://handienstleister.pages.dev/", year: "2026" },
     ],
     studio: [
       { name: "arche. links", url: "https://arche-links.pages.dev", year: "2026" },
@@ -139,31 +160,38 @@ export const siteConfig = {
     ],
   } as const,
 
-  // Kostenlose Tools — direkter Link, keine Registrierung nötig
-  // Trage hier die echten URLs deiner Tools ein
+  // Digitale Tools — Direkte Links mit beschreibenden Anchor-Kontexten
   tools: [
     {
       id: "links",
-      name: "arche. Links",
-      summary: "Linktree Ersatz. Alle deine Links an einem Ort — sauber, schnell, kostenlos.",
-      url: "https://arche-links.pages.dev/", // ← hier echte URL eintragen
-      badge: "Linktree Ersatz",
+      name: "arche.links",
+      headline: "Kostenlose Link-in-Bio Alternative",
+      summary: "Alle deine wichtigen Links auf einer blitzschnellen, eleganten Landingpage gebündelt. Datenschutzkonform, ohne Registrierungszwang und komplett werbefrei.",
+      url: "https://arche-links.pages.dev/",
+      badge: "Linktree-Alternative",
+      anchorText: "arche.links — kostenlose Link-in-Bio Alternative",
     },
     {
       id: "remove-bg",
-      name: "Background Remover",
-      summary: "removal.ai Ersatz. Hintergrund in Sekunden entfernen — direkt im Browser.",
-      url: "https://arche-remove.pages.dev/", // ← hier echte URL eintragen
-      badge: "removebg Ersatz",
+      name: "arche.remove",
+      headline: "Kostenloser KI Hintergrund-Entferner",
+      summary: "Bildhintergründe präzise in Sekunden entfernen — direkt lokal im Browser berechnet. Maximale Privatsphäre, da keine Fotos auf fremde Server geladen werden.",
+      url: "https://arche-remove.pages.dev/",
+      badge: "KI Background Remover",
+      anchorText: "arche.remove — kostenloser KI Hintergrund-Entferner",
     },
     {
       id: "pdf-tools",
-      name: "PDF Tools",
-      summary: "Adobe Acrobat Ersatz. PDFs zusammenführen, splitten, konvertieren — kostenlos.",
-      url: "https://arche-pdf.pages.dev/", // ← hier echte URL eintragen
-      badge: "Acrobat Ersatz",
+      name: "arche.pdf",
+      headline: "Kostenlose PDF-Tools",
+      summary: "PDF-Dateien zusammenfügen, aufteilen, komprimieren und konvertieren — ohne Adobe-Abo und ohne Upload-Limits. Schnell, sicher und kostenlos.",
+      url: "https://arche-pdf.pages.dev/",
+      badge: "PDF Utility Suite",
+      anchorText: "arche.pdf — kostenlose PDF-Tools",
     },
   ] as const,
+
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+

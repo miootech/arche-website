@@ -1,33 +1,34 @@
 import type { Metadata } from "next";
 import { ArcheApp } from "@/components/arche/app";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "arche. — Websites auf Anfrage",
+  title: "arche. — Webdesign, Webentwicklung & Digitale Produkte | Ludwigshafen & Mannheim",
   description:
-    "Individuelle Websites, Frontend Development und UI/UX für kleine Unternehmen, Selbstständige und eigene Ideen. Direkt mit Ali Malik in Ludwigshafen. Websites ab 169 €. Unverbindliches Erstgespräch.",
-  alternates: { canonical: "https://arche.studio" },
+    "Moderne Websites, High-End Webentwicklung (React, Next.js), UI/UX Design und technisches SEO aus Ludwigshafen am Rhein und Mannheim. Für Unternehmen & Selbstständige. Websites ab 169 €.",
+  alternates: { canonical: `${siteConfig.url}/` },
   openGraph: {
-    title: "arche. — Websites aus Ludwigshafen, die nicht nach Baukasten aussehen.",
+    title: "arche. — Webdesign & moderne Webentwicklung | Ludwigshafen & Mannheim",
     description:
-      "Webdesign, Frontend und UI/UX aus Ludwigshafen am Rhein. Direkt mit Ali Malik. Websites ab 169 €. Unverbindliches Erstgespräch.",
-    url: "https://arche.studio",
+      "Individuelle Websites und Webentwicklung aus der Rhein-Neckar Region. Schnell, modern, ohne Baukasten. Websites ab 169 €.",
+    url: `${siteConfig.url}/`,
     type: "website",
     locale: "de_DE",
-    siteName: "arche.",
+    siteName: siteConfig.brand,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "arche. — Independent Digital Studio aus Ludwigshafen",
+        alt: "arche. — Webdesign & Webentwicklung aus Ludwigshafen & Mannheim",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "arche. — Websites aus Ludwigshafen, die nicht nach Baukasten aussehen.",
+    title: "arche. — Webdesign & moderne Webentwicklung",
     description:
-      "Webdesign, Frontend und UI/UX aus Ludwigshafen am Rhein. Direkt mit Ali Malik. Websites ab 169 €. Unverbindliches Erstgespräch.",
+      "Webdesign, Frontend-Entwicklung und UI/UX aus Ludwigshafen & Mannheim. Direkt mit Ali Malik.",
     images: ["/og-image.png"],
   },
 };
@@ -35,3 +36,4 @@ export const metadata: Metadata = {
 export default function Home() {
   return <ArcheApp />;
 }
+

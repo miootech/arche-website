@@ -9,64 +9,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: base,
+      url: `${base}/`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${base}/#work`,
+      url: `${base}/webdesign`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${base}/#services`,
+      url: `${base}/webentwicklung`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${base}/#about`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/#process`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/#reviews`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/#faq`,
+      url: `${base}/ui-ux-design`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.9,
     },
     {
-      url: `${base}/#contact`,
+      url: `${base}/seo`,
       lastModified: now,
-      changeFrequency: "yearly",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/digitale-produkte`,
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${base}/impressum`,
       lastModified: now,
       changeFrequency: "yearly",
-      priority: 0.4,
+      priority: 0.3,
     },
     {
       url: `${base}/datenschutz`,
       lastModified: now,
       changeFrequency: "yearly",
-      priority: 0.4,
+      priority: 0.3,
     },
   ];
 }
+
