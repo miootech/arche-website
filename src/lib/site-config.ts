@@ -58,7 +58,7 @@ export const siteConfig = {
       id: "additional-page",
       name: "Additional Page",
       priceLabel: "+49 €",
-      summary: "Eine weitere Seite auf Basis deines bestehenden Projekts.",
+      summary: "Eine weitere Seite auf Basis deines bestehenden Projekts (Vorraussetzung: Multipage Paket).",
       highlight: false,
       inquiry: "additional-page",
     },
